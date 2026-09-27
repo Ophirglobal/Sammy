@@ -166,6 +166,31 @@
   .contact-line span:first-child{ color:var(--muted-2); }
   .contact-line a{ color:var(--text); text-decoration:none; }
 
+  /* ---------- enquiry form ---------- */
+  .form-card{ background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:40px; max-width:640px; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:560px){ .form-row{ grid-template-columns:1fr; } }
+  .form-card label{ display:block; font-size:13px; font-weight:600; color:var(--muted); margin:18px 0 7px; }
+  .form-card label:first-child{ margin-top:0; }
+  .form-card input, .form-card select, .form-card textarea{
+    width:100%; padding:12px 14px; border-radius:9px; border:1px solid var(--line);
+    background:var(--bg-2); color:var(--text); font-size:14.5px; font-family:'Inter', Arial, sans-serif;
+  }
+  .form-card input:focus, .form-card select:focus, .form-card textarea:focus{ outline:none; border-color:var(--teal); }
+  .form-card textarea{ resize:vertical; min-height:90px; }
+  .form-card select{ appearance:none; background-image:linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 20px) calc(1.1em), calc(100% - 15px) calc(1.1em); background-size:5px 5px, 5px 5px; background-repeat:no-repeat; }
+  .hp-field{ position:absolute; left:-9999px; opacity:0; height:0; width:0; overflow:hidden; }
+  .submit-btn{
+    margin-top:24px; width:100%; background:var(--grad); color:#0E0E24; border:none; padding:14px 0;
+    border-radius:9px; font-size:15px; font-weight:700; cursor:pointer; font-family:'Space Grotesk', 'Inter', sans-serif;
+  }
+  .submit-btn:disabled{ opacity:0.6; cursor:not-allowed; }
+  .form-security{ display:flex; align-items:center; gap:8px; margin-top:16px; font-size:12px; color:var(--muted-2); }
+  .form-security .lock{ color:var(--teal); }
+  .form-msg{ display:none; padding:14px 16px; border-radius:9px; font-size:13.5px; margin-top:16px; }
+  .form-msg.ok{ background:rgba(62,207,199,0.14); border:1px solid var(--teal); color:var(--text); }
+  .form-msg.err{ background:rgba(230,90,90,0.12); border:1px solid #E65A5A; color:var(--text); }
+
   footer{ border-top:1px solid var(--line); padding:36px 0; }
   .foot-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; color:var(--muted-2); font-size:13.5px; }
   .foot-brand{ display:flex; align-items:center; gap:10px; }
@@ -178,10 +203,10 @@
   <div class="nav">
     <a class="brand" href="#top"><img src="assets/logo.png" alt="Ophir Global Solutions logo"><span>OPHIR <b>GLOBAL SOLUTIONS</b></span></a>
     <nav class="links">
-      <a href="#programs">Interview Program</a>
-      <a href="#outsourcing">Support Outsourcing</a>
       <a href="#cloud">Cloud</a>
       <a href="#development">Software Dev</a>
+      <a href="#outsourcing">Support Outsourcing</a>
+      <a href="#programs">Corporate Comms</a>
       <a href="#contact">Contact</a>
     </nav>
     <a class="nav-cta" href="#contact">Get in touch</a>
@@ -195,20 +220,10 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow"><span class="dot"></span> Hyderabad · working with individuals and teams</div>
-        <h1 class="hero-h">Communication, done properly — on both sides of the conversation.</h1>
-        <p class="lead">We coach people into interviews they're ready for, and we run the email, chat, and voice support that keeps growing businesses answering theirs.</p>
+        <div class="eyebrow"><span class="dot"></span> Hyderabad · working with growing businesses</div>
+        <h1 class="hero-h">Cloud, software, and support — run by a team that answers.</h1>
+        <p class="lead">We manage cloud infrastructure, build Python &amp; Django applications, and staff the customer support desk for growing businesses. We also run a corporate communication program for individuals preparing to interview.</p>
         <div class="path-row">
-          <a class="path-card" href="#programs">
-            <span class="tag">For job seekers</span>
-            <div class="ttl">Interview Readiness Program</div>
-            <div class="go">See the 14-day program →</div>
-          </a>
-          <a class="path-card" href="#outsourcing">
-            <span class="tag">For businesses</span>
-            <div class="ttl">Customer Support Outsourcing</div>
-            <div class="go">See how it works →</div>
-          </a>
           <a class="path-card" href="#cloud">
             <span class="tag">For businesses</span>
             <div class="ttl">Cloud Services</div>
@@ -219,14 +234,24 @@
             <div class="ttl">Software Development &amp; Training</div>
             <div class="go">Python &amp; Django →</div>
           </a>
+          <a class="path-card" href="#outsourcing">
+            <span class="tag">For businesses</span>
+            <div class="ttl">Customer Support Outsourcing</div>
+            <div class="go">See how it works →</div>
+          </a>
+          <a class="path-card" href="#programs">
+            <span class="tag">For job seekers</span>
+            <div class="ttl">Corporate Communications</div>
+            <div class="go">Interview readiness program →</div>
+          </a>
         </div>
       </div>
       <div class="hero-panel">
         <div class="stat-row">
-          <div class="stat"><b>14</b><span>days, live coaching</span></div>
-          <div class="stat"><b>4</b><span>graded checkpoints</span></div>
+          <div class="stat"><b>4</b><span>core services, one team</span></div>
           <div class="stat"><b>3</b><span>support channels covered</span></div>
-          <div class="stat"><b>₹5,000</b><span>full program, one fee</span></div>
+          <div class="stat" style="font-size:20px;"><b style="font-size:20px;">Python &amp; Django</b><span>our development stack</span></div>
+          <div class="stat" style="font-size:20px;"><b style="font-size:20px;">AWS · Azure · GCP</b><span>cloud platforms we manage</span></div>
         </div>
         <div class="quote">"We didn't reject him for what he knew. We rejected him because we couldn't tell what he knew." — a hiring manager's note, paraphrased from a real debrief.</div>
       </div>
@@ -238,32 +263,10 @@
     <div class="wrap">
       <div class="s-head">
         <div class="s-label">What we do</div>
-        <h2>Two teams. One standard for clear communication.</h2>
-        <p>Whether it's a candidate about to walk into a panel or a customer waiting on a reply, the job is the same: structure the message, and make sure it lands.</p>
+        <h2>Four services. One standard for getting things done properly.</h2>
+        <p>From the infrastructure your product runs on, to the people answering your customers, to the individuals preparing for their next interview — the job is the same: do it properly, and make sure it's measurable.</p>
       </div>
       <div class="offer-grid">
-        <div class="offer-card">
-          <div class="icon">IR</div>
-          <h3>Interview Readiness Program</h3>
-          <p class="d">A 14-day, coach-led program that turns qualified candidates into confident, job-ready professionals — not just fluent speakers.</p>
-          <ul>
-            <li>Structured thinking for any behavioral or technical question</li>
-            <li>Executive presence, on camera and in the room</li>
-            <li>Live mock panels, scored and reviewed</li>
-            <li>Resume, LinkedIn, and negotiation coaching included</li>
-          </ul>
-        </div>
-        <div class="offer-card">
-          <div class="icon">CS</div>
-          <h3>Customer Support Outsourcing</h3>
-          <p class="d">A trained team that handles your email, chat, and voice support — so your customers get fast, on-brand answers without you having to hire and manage an in-house desk.</p>
-          <ul>
-            <li>Email and helpdesk ticket handling</li>
-            <li>Live chat coverage across your site or app</li>
-            <li>Voice support for calls and phone-based queries</li>
-            <li>Flexible engagement — pilot batch, part-time, or full desk</li>
-          </ul>
-        </div>
         <div class="offer-card">
           <div class="icon">CL</div>
           <h3>Cloud Services</h3>
@@ -284,6 +287,28 @@
             <li>Live Python &amp; Django training, beginner to job-ready</li>
             <li>Code review, mentorship &amp; team upskilling</li>
             <li>API integrations &amp; ongoing maintenance</li>
+          </ul>
+        </div>
+        <div class="offer-card">
+          <div class="icon">CS</div>
+          <h3>Customer Support Outsourcing</h3>
+          <p class="d">A trained team that handles your email, chat, and voice support — so your customers get fast, on-brand answers without you having to hire and manage an in-house desk.</p>
+          <ul>
+            <li>Email and helpdesk ticket handling</li>
+            <li>Live chat coverage across your site or app</li>
+            <li>Voice support for calls and phone-based queries</li>
+            <li>Flexible engagement — pilot batch, part-time, or full desk</li>
+          </ul>
+        </div>
+        <div class="offer-card">
+          <div class="icon">CC</div>
+          <h3>Corporate Communications</h3>
+          <p class="d">A 14-day, coach-led interview readiness program that turns qualified candidates into confident, job-ready professionals — not just fluent speakers.</p>
+          <ul>
+            <li>Structured thinking for any behavioral or technical question</li>
+            <li>Executive presence, on camera and in the room</li>
+            <li>Live mock panels, scored and reviewed</li>
+            <li>Resume, LinkedIn, and negotiation coaching included</li>
           </ul>
         </div>
       </div>
@@ -309,81 +334,6 @@
         <div class="trust-item">
           <h4>Built for the outcome</h4>
           <p>The goal isn't a certificate or a filled seat — it's an offer letter, or a customer who got answered well.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAM DETAIL -->
-  <section id="programs" class="program">
-    <div class="wrap">
-      <div class="s-head">
-        <div class="s-label">Interview Readiness Program</div>
-        <h2>Fourteen days. Four checkpoints. One noticeably different you.</h2>
-        <p>Week one rebuilds how you write, speak, and carry yourself in a professional setting. Week two puts it under real interview pressure — panels, negotiation, and the questions you didn't prepare for.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="tl-step check"><div class="day">DAY 03</div><div class="lbl">Written Communication Test</div></div>
-        <div class="tl-step"><div class="day">DAY 04–06</div><div class="lbl">Voice, body language &amp; discussion</div></div>
-        <div class="tl-step check"><div class="day">DAY 07</div><div class="lbl">Group Discussion &amp; Presentation Test</div></div>
-        <div class="tl-step"><div class="day">DAY 08–09</div><div class="lbl">Resume, LinkedIn &amp; STAR method</div></div>
-        <div class="tl-step check"><div class="day">DAY 10</div><div class="lbl">AI Mock Interview Test</div></div>
-        <div class="tl-step"><div class="day">DAY 11–13</div><div class="lbl">Negotiation, panels &amp; full mock run</div></div>
-        <div class="tl-step check"><div class="day">DAY 14</div><div class="lbl">Final Live Panel + Graduation</div></div>
-      </div>
-
-      <div class="price-row">
-        <div class="price-card">
-          <div class="s-label">Full program</div>
-          <div class="amount">₹5,000</div>
-          <div class="note">One-time fee · no hidden costs</div>
-          <ul>
-            <li>14 days of live coaching</li>
-            <li>4 graded assessments</li>
-            <li>AI mock interview access</li>
-            <li>Final panel + written feedback report</li>
-            <li>Resume &amp; LinkedIn review</li>
-            <li>Peer community access</li>
-          </ul>
-        </div>
-        <div class="outcomes">
-          <h4>By the end of Day 14, you can</h4>
-          <ol>
-            <li>Structure any answer — technical or behavioral — in under 10 seconds of thought.</li>
-            <li>Speak with controlled pace and minimal filler under real pressure.</li>
-            <li>Hold executive presence in person and on video calls.</li>
-            <li>Navigate a live panel, including questions you didn't prepare for.</li>
-            <li>Negotiate compensation without under-selling yourself.</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OUTSOURCING DETAIL -->
-  <section id="outsourcing">
-    <div class="wrap">
-      <div class="s-head">
-        <div class="s-label">Customer Support Outsourcing</div>
-        <h2>Your customers get answered. You get your time back.</h2>
-        <p>We staff and manage the support desk; you keep control of tone, policy, and priorities. Start with a small pilot batch before committing to full coverage.</p>
-      </div>
-      <div class="channel-grid">
-        <div class="channel">
-          <div class="n">Email</div>
-          <h4>Inbox &amp; ticket support</h4>
-          <p>Helpdesk queues on Zendesk, Freshdesk, Gorgias, or your existing tool — triaged, answered, and escalated on your SLA.</p>
-        </div>
-        <div class="channel">
-          <div class="n">Chat</div>
-          <h4>Live chat coverage</h4>
-          <p>Real-time chat on your site or app during the hours you need, with your tone and product knowledge baked into every reply.</p>
-        </div>
-        <div class="channel">
-          <div class="n">Voice</div>
-          <h4>Phone &amp; call support</h4>
-          <p>Inbound calls handled by trained agents, with the same scripts and escalation paths as your in-house team would use.</p>
         </div>
       </div>
     </div>
@@ -451,15 +401,90 @@
     </div>
   </section>
 
+  <!-- OUTSOURCING DETAIL -->
+  <section id="outsourcing" class="program">
+    <div class="wrap">
+      <div class="s-head">
+        <div class="s-label">Customer Support Outsourcing</div>
+        <h2>Your customers get answered. You get your time back.</h2>
+        <p>We staff and manage the support desk; you keep control of tone, policy, and priorities. Start with a small pilot batch before committing to full coverage.</p>
+      </div>
+      <div class="channel-grid">
+        <div class="channel">
+          <div class="n">Email</div>
+          <h4>Inbox &amp; ticket support</h4>
+          <p>Helpdesk queues on Zendesk, Freshdesk, Gorgias, or your existing tool — triaged, answered, and escalated on your SLA.</p>
+        </div>
+        <div class="channel">
+          <div class="n">Chat</div>
+          <h4>Live chat coverage</h4>
+          <p>Real-time chat on your site or app during the hours you need, with your tone and product knowledge baked into every reply.</p>
+        </div>
+        <div class="channel">
+          <div class="n">Voice</div>
+          <h4>Phone &amp; call support</h4>
+          <p>Inbound calls handled by trained agents, with the same scripts and escalation paths as your in-house team would use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM DETAIL (Corporate Communications — listed last by design) -->
+  <section id="programs">
+    <div class="wrap">
+      <div class="s-head">
+        <div class="s-label">Corporate Communications</div>
+        <h2>Fourteen days. Four checkpoints. One noticeably different you.</h2>
+        <p>Week one rebuilds how you write, speak, and carry yourself in a professional setting. Week two puts it under real interview pressure — panels, negotiation, and the questions you didn't prepare for.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-step check"><div class="day">DAY 03</div><div class="lbl">Written Communication Test</div></div>
+        <div class="tl-step"><div class="day">DAY 04–06</div><div class="lbl">Voice, body language &amp; discussion</div></div>
+        <div class="tl-step check"><div class="day">DAY 07</div><div class="lbl">Group Discussion &amp; Presentation Test</div></div>
+        <div class="tl-step"><div class="day">DAY 08–09</div><div class="lbl">Resume, LinkedIn &amp; STAR method</div></div>
+        <div class="tl-step check"><div class="day">DAY 10</div><div class="lbl">AI Mock Interview Test</div></div>
+        <div class="tl-step"><div class="day">DAY 11–13</div><div class="lbl">Negotiation, panels &amp; full mock run</div></div>
+        <div class="tl-step check"><div class="day">DAY 14</div><div class="lbl">Final Live Panel + Graduation</div></div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-card">
+          <div class="s-label">Full program</div>
+          <div class="amount">₹5,000</div>
+          <div class="note">One-time fee · no hidden costs</div>
+          <ul>
+            <li>14 days of live coaching</li>
+            <li>4 graded assessments</li>
+            <li>AI mock interview access</li>
+            <li>Final panel + written feedback report</li>
+            <li>Resume &amp; LinkedIn review</li>
+            <li>Peer community access</li>
+          </ul>
+        </div>
+        <div class="outcomes">
+          <h4>By the end of Day 14, you can</h4>
+          <ol>
+            <li>Structure any answer — technical or behavioral — in under 10 seconds of thought.</li>
+            <li>Speak with controlled pace and minimal filler under real pressure.</li>
+            <li>Hold executive presence in person and on video calls.</li>
+            <li>Navigate a live panel, including questions you didn't prepare for.</li>
+            <li>Negotiate compensation without under-selling yourself.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section>
     <div class="wrap">
       <div class="cta-band">
         <div>
           <h3>Ready to talk?</h3>
-          <p>Interview prep, support outsourcing, cloud, or a Django build — tell us what you need and we'll take it from there.</p>
+          <p>Cloud, a Django build, support outsourcing, or interview coaching — tell us what you need and we'll take it from there.</p>
         </div>
-        <a class="cta-btn" href="mailto:samuelbervilin@gmail.com">Email us</a>
+        <a class="cta-btn" href="#contact">Send an enquiry</a>
       </div>
     </div>
   </section>
@@ -469,21 +494,47 @@
     <div class="wrap">
       <div class="s-head">
         <div class="s-label">Contact</div>
-        <h2>Reach Ophir Global Solutions directly.</h2>
+        <h2>Tell us what you need — we'll follow up directly.</h2>
+        <p>No sales sequence, no shared inbox. A short form, spam-filtered, straight to the team.</p>
       </div>
-      <div class="contact-grid">
-        <div>
-          <div class="contact-line"><span>Contact</span><span>Samuel B</span></div>
-          <div class="contact-line"><span>Phone</span><a href="tel:+916304769196">+91 63047 69196</a></div>
-          <div class="contact-line"><span>Email</span><a href="mailto:samuelbervilin@gmail.com">samuelbervilin@gmail.com</a></div>
-          <div class="contact-line"><span>Location</span><span>Hyderabad, India</span></div>
-        </div>
-        <div>
-          <div class="contact-line"><span>Interview Program</span><span>Batch enrollment open, no cap</span></div>
-          <div class="contact-line"><span>Support Outsourcing</span><span>Pilot batches available</span></div>
-          <div class="contact-line"><span>Cloud Services</span><span>Ongoing &amp; project-based</span></div>
-          <div class="contact-line"><span>Software Dev &amp; Training</span><span>New Python/Django cohorts forming</span></div>
-        </div>
+
+      <div class="form-card">
+        <form id="enquiryForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <!-- Honeypot: hidden from real visitors, bots often fill it in automatically -->
+          <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off">
+
+          <label for="name">Your name</label>
+          <input id="name" name="name" required placeholder="e.g. Priya Sharma" />
+
+          <div class="form-row">
+            <div>
+              <label for="company">Company</label>
+              <input id="company" name="company" placeholder="e.g. Meridian Freight LLC" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@company.com" />
+            </div>
+          </div>
+
+          <label for="service">Which service are you enquiring about?</label>
+          <select id="service" name="service">
+            <option>Cloud Services</option>
+            <option>Software Development &amp; Training</option>
+            <option>Customer Support Outsourcing</option>
+            <option>Corporate Communications (Interview Readiness)</option>
+            <option>Not sure yet</option>
+          </select>
+
+          <label for="details">Tell us a bit more</label>
+          <textarea id="details" name="details" placeholder="Team size, timeline, current pain points..."></textarea>
+
+          <button type="submit" class="submit-btn" id="submitBtn">Send enquiry</button>
+          <div class="form-security"><span class="lock">🔒</span> Spam-filtered submission — no phone number or personal inbox is exposed on this page.</div>
+        </form>
+
+        <div class="form-msg ok" id="formOk">Thanks — your enquiry has been received. We'll follow up within one business day.</div>
+        <div class="form-msg err" id="formErr">Something went wrong sending that. Please try again in a moment.</div>
       </div>
     </div>
   </section>
@@ -514,6 +565,37 @@
       links.style.borderRadius = '12px';
       links.style.border = '1px solid #34346B';
       links.style.gap = '14px';
+    });
+  }
+
+  var form = document.getElementById('enquiryForm');
+  var okMsg = document.getElementById('formOk');
+  var errMsg = document.getElementById('formErr');
+  var btn = document.getElementById('submitBtn');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      okMsg.style.display = 'none';
+      errMsg.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (response.ok) {
+          form.style.display = 'none';
+          okMsg.style.display = 'block';
+        } else {
+          throw new Error('Submission failed');
+        }
+      }).catch(function () {
+        errMsg.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Send enquiry';
+      });
     });
   }
 </script>
