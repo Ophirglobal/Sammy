@@ -462,7 +462,7 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     okMsg.style.display = 'none'; errMsg.style.display = 'none';
-    if (form.action.indexOf('YOUR_FORM_ID') !== -1) {
+    if (form.action.indexOf('https://formspree.io/f/xppwogeo') !== -1) {
       errMsg.textContent = 'This form is not connected yet. The site owner needs to add their Formspree form ID.';
       errMsg.style.display = 'block';
       return;
